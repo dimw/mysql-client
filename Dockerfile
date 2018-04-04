@@ -1,5 +1,7 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk add --no-cache \
-    mysql-client \
-    pv
+RUN apt-get update && \
+    apt-get install -y \
+        mysql-client \
+        pv && \
+    rm -rf /var/lib/apt/lists/*
